@@ -95,7 +95,7 @@ function getScores(relevantItems,inputGrams,databases, showMatchedGrams){
 function search(input,databases){
   var output = getNGrams(input, 2); //Convert the input into an array of ngrams
   var docs = getRelevantItems(output, databases.databaseGrams); //Find relevant docs from corpus
-  var mostRelevant = getMostRelevantItems(docs, 10); //Find the 10 most relevant ones
-  var scores = getScores(mostRelevant, output, databases, false); //Only relevant ones require similarity calculation
+  //var mostRelevant = getMostRelevantItems(docs, 10); //Find the 10 most relevant ones
+  var scores = getScores(docs, output, databases, false); //Only relevant ones require similarity calculation
   return {inputNGrams: output, relevantItems: docs, mostRelevantItems: mostRelevant, scores:scores};
 }
